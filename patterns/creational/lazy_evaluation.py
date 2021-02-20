@@ -53,6 +53,10 @@ class Person:
         self.occupation = occupation
         self.call_count2 = 0
 
+    # is a non-data descriptor
+    # a.x has a lookup chain starting with a.__dict__['x'], then type(a).__dict__['x'], and continuing through the method resolution order of type(a). 
+    # If the looked-up value is an object defining one of the descriptor methods, then Python may override the default behavior and invoke the descriptor method 
+    # instead. Where this occurs in the precedence chain depends on which descriptor methods were defined.
     @lazy_property
     def relatives(self):
         # Get all relatives, let's assume that it costs much time.
